@@ -10,8 +10,8 @@ public class StudentGrades {
     private float temp_Calc = 0;
     private float final_weight_Calc;
     private int loopCounter = 1;
-    private ArrayList<Float> grade_arrayList;
-    private ArrayList<Float> weight_arrayList;
+    private ArrayList<Float> grade_arrayList = new ArrayList<>();
+    private ArrayList<Float> weight_arrayList = new ArrayList<>();
 
 
     public StudentGrades(){
@@ -80,7 +80,6 @@ public class StudentGrades {
             Result grade_weight = results.get(i);
             grade_arrayList.add(grade_weight.grade);
             weight_arrayList.add(grade_weight.weight);
-
         }
 
 

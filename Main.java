@@ -8,6 +8,7 @@ public class Main {
         student_grades.calculateAverage();
         System.out.println(student_grades.getFinalGrade());
         System.out.println(student_grades.getLetterGrade());
+        student_grades.getOutput();
     }
 
 }
