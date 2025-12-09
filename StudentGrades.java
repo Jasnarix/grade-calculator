@@ -82,7 +82,8 @@ public class StudentGrades {
             weight_arrayList.add(grade_weight.weight);
         }
 
-
+        System.out.println(grade_arrayList);
+        System.out.println(weight_arrayList);
         System.out.println("Average: " + final_Calc + "%");
         System.out.println("Letter Grade: " + getLetterGrade());
 
