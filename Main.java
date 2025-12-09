@@ -5,8 +5,9 @@ public class Main {
         StudentGrades student_grades = new StudentGrades();
         student_grades.noOfAssignments();
         student_grades.addResults();
-        System.out.println(student_grades.calculateAverage());
-        System.out.println(student_grades.getLetterGrade(student_grades.calculateAverage()));
+        student_grades.calculateAverage();
+        System.out.println(student_grades.getFinalGrade());
+        System.out.println(student_grades.getLetterGrade());
     }
 
 }

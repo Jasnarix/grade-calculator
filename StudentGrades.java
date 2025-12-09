@@ -14,7 +14,7 @@ public class StudentGrades {
     public StudentGrades(){
         this.number_of_grades = 0;
         this.results = new ArrayList<Result>();
-}
+    }
 
     public void noOfAssignments() {
         Scanner myObj= new Scanner(System.in);
@@ -25,7 +25,7 @@ public class StudentGrades {
     public void addResults(){
         for(int i = 0; i < this.number_of_grades; i++){
             Scanner grade_input = new Scanner(System.in);
-            System.out.print("Enter grade for Assignment" +loopCounter +": ");
+            System.out.print("Enter grade for Assignment " +loopCounter +": ");
             float grade = grade_input.nextFloat();
 
             Scanner weight_input = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class StudentGrades {
         }
     }
     
-    public float calculateAverage(){
+    public void calculateAverage(){
         for(int i = 0; i < results.size(); i++){
             Result grade_weight_Calc = results.get(i);
             gradeCalc = grade_weight_Calc.grade; 
@@ -49,23 +49,26 @@ public class StudentGrades {
             final_Calc += temp_Calc;
             final_weight_Calc += weightCalc/100;
         }
-        final_Calc = final_Calc/final_weight_Calc;
-        return final_Calc;
+        this.final_Calc = final_Calc/final_weight_Calc;
     }
 
-    public String getLetterGrade(float current_grade){
-        if(current_grade < 50 && current_grade >=0){
-            return "F";
-        } else if(current_grade <= 59 && current_grade >=50){
-            return "P";
-        } else if(current_grade <= 69 && current_grade >=60){
-            return "C";
-        } else if(current_grade <=  79 && current_grade >=70){
-            return "D";
-        } else if(current_grade <=  100 && current_grade >=80){
-            return "HD";
-        } else{
+    public float getFinalGrade() {
+        return this.final_Calc;
+    }
+
+    public String getLetterGrade(){
+        if(final_Calc < 0 || final_Calc > 100){
             return "Error.";
+        } else if(final_Calc < 50){
+            return "F";
+        } else if(final_Calc < 60){
+            return "P";
+        } else if(final_Calc < 70){
+            return "C";
+        }  else if(final_Calc < 80){
+            return "D";
+        } else {
+            return "HD";
         }
     }
 }
