@@ -5,7 +5,7 @@ public class Main {
         StudentGrades student_grades = new StudentGrades();
         student_grades.noOfAssignments();
         student_grades.addResults();
-
+        student_grades.calculateAverage();
     }
 
 }
