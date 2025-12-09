@@ -10,6 +10,9 @@ public class StudentGrades {
     private float temp_Calc = 0;
     private float final_weight_Calc;
     private int loopCounter = 1;
+    private ArrayList<Float> grade_arrayList;
+    private ArrayList<Float> weight_arrayList;
+
 
     public StudentGrades(){
         this.number_of_grades = 0;
@@ -42,9 +45,9 @@ public class StudentGrades {
     
     public void calculateAverage(){
         for(int i = 0; i < results.size(); i++){
-            Result grade_weight_Calc = results.get(i);
-            gradeCalc = grade_weight_Calc.grade; 
-            weightCalc = grade_weight_Calc.weight;
+            Result grade_weight = results.get(i);
+            gradeCalc = grade_weight.grade; 
+            weightCalc = grade_weight.weight;
             temp_Calc = gradeCalc * (weightCalc/100);
             final_Calc += temp_Calc;
             final_weight_Calc += weightCalc/100;
@@ -70,5 +73,19 @@ public class StudentGrades {
         } else {
             return "HD";
         }
+    }
+
+    public void getOutput(){
+        for(int i = 0; i < results.size(); i++){
+            Result grade_weight = results.get(i);
+            grade_arrayList.add(grade_weight.grade);
+            weight_arrayList.add(grade_weight.weight);
+
+        }
+
+
+        System.out.println("Average: " + final_Calc + "%");
+        System.out.println("Letter Grade: " + getLetterGrade());
+
     }
 }
