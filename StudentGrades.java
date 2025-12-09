@@ -49,6 +49,7 @@ public class StudentGrades {
             final_Calc += temp_Calc;
             final_weight_Calc += weightCalc/100;
         }
+        final_Calc = final_Calc/final_weight_Calc;
         return final_Calc;
     }
 
