@@ -29,10 +29,20 @@ public class StudentGrades {
         for(int i = 0; i < this.number_of_grades; i++){
             Scanner grade_input = new Scanner(System.in);
             System.out.print("Enter grade for Assignment " +loopCounter +": ");
-            float grade = grade_input.nextFloat();
+            if(grade_input.hasNextFloat()){
+                float grade = grade_input.nextFloat();
+            } else {
+                System.out.println("This is not a valid input.");
+            }
 
             Scanner weight_input = new Scanner(System.in);
             System.out.print("Enter Weight for Assignment " + loopCounter + ": " );
+            if(weight_input.hasNextFloat()){
+                float weight = grade_input.nextFloat();
+            } else {
+                System.out.println("This is not a valid input.");
+            }
+            
             float weight = weight_input.nextFloat();
 
             Result result_obj = new Result(grade, weight);
