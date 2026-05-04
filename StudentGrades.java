@@ -35,28 +35,32 @@ public class StudentGrades {
 
             Scanner grade_input = new Scanner(System.in);
             Scanner weight_input = new Scanner(System.in);
+            valid_grade = false;
+            valid_weight = false;
 
-            while(!valid){
+
+            while(!valid_grade){
                 try{
                     System.out.print("Enter grade for Assignment " +loopCounter +": ");
-                    float grade = grade_input.nextFloat();
+                    this.grade = grade_input.nextFloat();
                     valid_grade = true;
                 } catch (InputMismatchException e){
                     System.out.print("That is an invalid input. Please enter a number.");
                     grade_input.nextLine();
                 }
             }
-
+            
             while(!valid_weight){
                 try{
-                System.out.print("Enter Weight for Assignment " + loopCounter + ": " );
-                float weight = grade_input.nextFloat();
-                valid_weight = true;
+                    System.out.print("\nEnter Weight for Assignment " + loopCounter + ": " );
+                    this.weight = weight_input.nextFloat();
+                    valid_weight = true;
                 } catch (InputMismatchException e){
                     System.out.print("That is an invalid input. Please enter a number.");
                     weight_input.nextLine();
                 }
             }
+
             Result result_obj = new Result(grade, weight);
             results.add(result_obj);
             loopCounter++;
